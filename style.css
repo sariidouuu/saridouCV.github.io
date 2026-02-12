@@ -59,9 +59,6 @@
         text-align: right; /* Το κρατάμε δεξιά και στο κινητό */
         margin-top: auto; /* Σπρώχνει το </CV> πιο κάτω στο κινητό */
         width: 100%;
-        width: fit-content;
-        margin-left: auto;
-        display: block;
     }
 }
 
@@ -142,8 +139,6 @@ footer {
     font-size: 28px;
     margin-top: auto;
     margin-left:auto;
-    bottom: 5px;
-    right: 10px;
 }
 footer:hover {
     background-color: #FFA686;
