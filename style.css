@@ -2,13 +2,14 @@
 @media (hover: hover) {
     /* Εδώ ορίζεις ότι ο κέρσορας είναι κρυφός γιατί έχεις το φαντασματάκι */
     * { cursor: none; }
-    
+
     main {
         flex-direction: row; /* 2 στήλες δίπλα-δίπλα */
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: flex-start;
     }
+
     .left-column {
         width: 40%; /* Πιο στενή στήλη για τα info */
         display: flex;
@@ -16,16 +17,16 @@
         align-items: flex-start; /* Στοιχίζει το περιεχόμενο της αριστερής στήλης αριστερά */
         text-align: left;
     }
-
     .right-column {
         width: 50%; /* Πιο πλατιά στήλη για το κείμενο */
     }
-
     .cv-section {
         width:100%; 
     }
 
-    
+    footer {
+        margin-left: auto;
+    } 
 }
 /* ΑΥΤΟ ΕΙΝΑΙ ΓΙΑ ΚΙΝΗΤΑ/TABLETS (TOUCH) */
 @media (pointer: coarse) {
@@ -55,8 +56,8 @@
     }
 
     footer {
+        text-align: right; /* Το κρατάμε δεξιά και στο κινητό */
         margin-top: 50px; /* Σπρώχνει το </CV> πιο κάτω στο κινητό */
-        text-align: left;
         width: 100%;
     }
 }
@@ -96,20 +97,20 @@ body {
 
 /*MAIN*/
 main {
+    flex: 1;/* ΑΥΤΟ ΕΙΝΑΙ ΤΟ ΚΛΕΙΔΙ: Λέει στη main να πιάσει όλο τον διαθέσιμο χώρο ΧΩΡΙΣ να βγει έξω από την οθόνη */
     display: flex;
     flex-direction: row; /* Επιτρέπει τις στήλες δίπλα-δίπλα */
     flex-wrap: wrap;
     justify-content: flex-start; /* Ξεκινάει από την κορυφή */
     align-items: flex-start;    /* Στοιχίζει τα πάντα ΑΡΙΣΤΕΡΑ */
 
-    gap: 40px; /* Δίνει ομοιόμορφη απόσταση μεταξύ όλων των στοιχείων */
+    gap: 20px; /* Δίνει ομοιόμορφη απόσταση μεταξύ όλων των στοιχείων */
     width: 100%;  /* 100% του πλάτους της οθόνης */
     height: auto; 
-    min-height: 100vh;
     /*Το 100vh σημαίνει "ακριβώς όσο το ύψος της οθόνης σου".
     height: auto; => Λέει στη main: "Μεγάλωσε όσο χρειάζεται για να χωρέσεις όλα τα sections*/
     
-    padding: 60px 20px; /* Δίνει "αέρα" γύρω από το κείμενο */
+    padding: 60px 0px 0px 20px; /* Δίνει "αέρα" γύρω από το κείμενο */
     box-sizing: border-box;
 
     color: #ffffff;
@@ -132,14 +133,12 @@ header:hover{
     color: #0aafdd; /* Το μπλε χρώμα μόνο για τα < και > */
 }
 footer {
-    position: fixed;
-    display: block;
+    position: relative;
     color: #ee5034;
     padding: 8px;
     font-size: 28px;
-    margin-top: auto; /* Σπρώχνει το footer στο τέλος */
-    width:auto;
-    bottom: 5px;  
+    margin-top: auto;
+    bottom: 5px;
     right: 10px;
 }
 footer:hover {
