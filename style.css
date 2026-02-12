@@ -16,6 +16,10 @@
         flex-direction: column;
         align-items: flex-start; /* Στοιχίζει το περιεχόμενο της αριστερής στήλης αριστερά */
         text-align: left;
+
+        border-right: 1px solid rgba(144, 45, 49, 0.5); /* Λεπτή γραμμή στο χρώμα των τίτλων σου με λίγη διαφάνεια */
+        padding-right: 20px;
+        padding-left: -10px;
     }
     .right-column {
         width: 50%; /* Πιο πλατιά στήλη για το κείμενο */
@@ -126,10 +130,10 @@ header {
     top: 5px;
     left: 10px;
 }
-header:hover{
+/*header:hover{
     background-color: #FFA686;
     border-radius: 20px;
-}
+}*/
 .bracket {
     color: #0aafdd; /* Το μπλε χρώμα μόνο για τα < και > */
 }
@@ -141,18 +145,29 @@ footer {
     margin-top: auto;
     margin-left:auto;
 }
-footer:hover {
+/*footer:hover {
     background-color: #FFA686;
     border-radius: 20px;
-}
+}*/
 
 .intro h2 {
-    color: #0aafdd;
+    color: #17b4df;
     font-size: 24px;
     margin-top: -8px;
-    margin-bottom: -2px;
+    margin-bottom: 8px;
     width:100%;
     text-align: left;
+
+    background-color: #0c1c4c;
+    box-shadow: 0 0 5px #0c1c4c,
+    0 0 25px #0c1c4c;
+    border-radius: 10px;
+}
+
+.intro h2:hover{
+    box-shadow: 0 0 5px #0c1c4c,
+    0 0 25px #0c1c4c, 0 0 50px #0c1c4c,
+    0 0 100px #0c1c4c, 0 0 200px #0c1c4c;
 }
 
 /*H*/
@@ -162,6 +177,12 @@ h3{
     margin-top: 10px;
     margin-bottom: -2px;
     width: 100%;
+}
+h3:hover { 
+    color: #ee5034; 
+    text-shadow: 0 0 5px #ee5034, 
+    0 0 25px #ee5034, 0 0 50px #ee5034, 
+    0 0 100px #ee5034, 0 0 200px #ee5034; 
 }
 
 /*MAIN WITH LISTS*/
