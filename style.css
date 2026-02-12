@@ -33,6 +33,7 @@
     .ghost-cursor {
         display: none; /* Σιγουρευόμαστε ότι το φάντασμα δεν φαίνεται */
     }
+
     main {
         flex-direction: column; /* 1 στήλη, το ένα κάτω από το άλλο */
         align-items: flex-start;
@@ -48,9 +49,11 @@
         white-space: normal; /* Επιτρέπει την αλλαγή γραμμής μόνο αν όντως δεν χωράει */
         display: block; /* Κάνει κάθε li να είναι μπλοκ, ώστε να παίρνει όλο το πλάτος */
     }
+
     .cv-section {
         width: 100%; /* Πιάνει όλο το πλάτος */ 
     }
+
     footer {
         margin-top: 50px; /* Σπρώχνει το </CV> πιο κάτω στο κινητό */
         text-align: left;
@@ -133,9 +136,8 @@ footer {
     font-size: 28px;
     margin-top: auto; /* Σπρώχνει το footer στο τέλος */
     width:100px;
-    text-align: left;
-    /*bottom: 5px;  
-    left: 10px;*/
+    bottom: 5px;  
+    left: 10px;
 }
 footer:hover {
     background-color: #FFA686;
