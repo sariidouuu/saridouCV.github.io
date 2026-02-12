@@ -18,7 +18,7 @@
     }
 
     .right-column {
-        width: 60%; /* Πιο πλατιά στήλη για το κείμενο */
+        width: 50%; /* Πιο πλατιά στήλη για το κείμενο */
     }
 
     .cv-section {
@@ -102,7 +102,7 @@ main {
     justify-content: flex-start; /* Ξεκινάει από την κορυφή */
     align-items: flex-start;    /* Στοιχίζει τα πάντα ΑΡΙΣΤΕΡΑ */
 
-    gap: 10px; /* Δίνει ομοιόμορφη απόσταση μεταξύ όλων των στοιχείων */
+    gap: 40px; /* Δίνει ομοιόμορφη απόσταση μεταξύ όλων των στοιχείων */
     width: 100%;  /* 100% του πλάτους της οθόνης */
     height: auto; 
     min-height: 100vh;
@@ -118,7 +118,7 @@ main {
 /*HEADER & FOOTER*/
 header {
     position: absolute;
-    color: #902d31;
+    color: #ee5034;
     font-size: 28px;
     padding: 8px;
     top: 5px;
@@ -128,16 +128,19 @@ header:hover{
     background-color: #FFA686;
     border-radius: 20px;
 }
+.bracket {
+    color: #0aafdd; /* Το μπλε χρώμα μόνο για τα < και > */
+}
 footer {
-    position: relative;
+    position: fixed;
     display: block;
-    color: #902d31;
+    color: #ee5034;
     padding: 8px;
     font-size: 28px;
     margin-top: auto; /* Σπρώχνει το footer στο τέλος */
-    width:100px;
+    width:auto;
     bottom: 5px;  
-    left: 10px;
+    right: 10px;
 }
 footer:hover {
     background-color: #FFA686;
