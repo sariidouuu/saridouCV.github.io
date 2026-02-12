@@ -2,14 +2,30 @@
 @media (hover: hover) {
     /* Εδώ ορίζεις ότι ο κέρσορας είναι κρυφός γιατί έχεις το φαντασματάκι */
     * { cursor: none; }
+    
     main {
         flex-direction: row; /* 2 στήλες δίπλα-δίπλα */
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: flex-start;
     }
+    .left-column {
+        width: 40%; /* Πιο στενή στήλη για τα info */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Στοιχίζει το περιεχόμενο της αριστερής στήλης αριστερά */
+        text-align: left;
+    }
+
+    .right-column {
+        width: 60%; /* Πιο πλατιά στήλη για το κείμενο */
+    }
+
     .cv-section {
-        width: 45%; /* Μισή οθόνη */
+        width:100%; 
     }
+
+    
 }
 /* ΑΥΤΟ ΕΙΝΑΙ ΓΙΑ ΚΙΝΗΤΑ/TABLETS (TOUCH) */
 @media (pointer: coarse) {
@@ -19,16 +35,26 @@
     }
     main {
         flex-direction: column; /* 1 στήλη, το ένα κάτω από το άλλο */
-        align-items: center;
+        align-items: flex-start;
     }
+
+    .left-column, 
+    .right-column,
+    .cv-section {
+        width: 100%; 
+    }
+
     main li {
         white-space: normal; /* Επιτρέπει την αλλαγή γραμμής μόνο αν όντως δεν χωράει */
+        display: block; /* Κάνει κάθε li να είναι μπλοκ, ώστε να παίρνει όλο το πλάτος */
     }
     .cv-section {
         width: 100%; /* Πιάνει όλο το πλάτος */ 
     }
     footer {
-        margin-top: 100px; /* Σπρώχνει το </CV> πιο κάτω στο κινητό */
+        margin-top: 50px; /* Σπρώχνει το </CV> πιο κάτω στο κινητό */
+        text-align: left;
+        width: 100%;
     }
 }
 
@@ -50,71 +76,31 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* ΑΠΑΡΑΙΤΗΤΟ για σωστό πλάτος */
     font-family: 'Courier New', Courier, monospace;
 }
 
 /*BODY*/
 body {
     display: flex;
+    flex-direction: column;
     background-color: #0a071e;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh; 
     height: auto; /* ΑΛΛΑΓΗ: Επιτρέπει στο body να επεκταθεί */
+    overflow-x: hidden; /* Κλειδώνει οριστικά το δεξιά-αριστερά */
 }
 
-/*HEADER & FOOTER*/
-header {
-    position: absolute;
-    color: #902d31;
-    font-size: 28px;
-    padding: 8px;
-    top: 10px;
-    left: 10px;
-}
-header:hover{
-    background-color: #FFA686;
-    border-radius: 20px;
-}
-footer {
-    position: relative;
-    display: inline-block;
-    color: #902d31;
-    padding: 5px;
-    font-size: 28px;
-    margin-top: auto; /* Σπρώχνει το footer στο τέλος */
-    bottom: 10px;  
-    left: -10px;
-}
-footer:hover {
-    background-color: #FFA686;
-    border-radius: 20px;
-}
-
-/*H*/
-h2{
-    color: #09b2e1;
-    font-size: 24px;
-    margin-top: -15px;
-    margin-bottom: -10px;
-}
-
-h3{
-    color: #902d31;
-    font-size: 24px;
-    margin-top: 5px;
-    margin-bottom: -2px;
-}
-
-/*MAIN & MAIN WITH LISTS*/
+/*MAIN*/
 main {
     display: flex;
-    flex-direction: column; /* Τα βάζει σε στήλη, το ένα κάτω από το άλλο */
+    flex-direction: row; /* Επιτρέπει τις στήλες δίπλα-δίπλα */
+    flex-wrap: wrap;
     justify-content: flex-start; /* Ξεκινάει από την κορυφή */
     align-items: flex-start;    /* Στοιχίζει τα πάντα ΑΡΙΣΤΕΡΑ */
 
     gap: 10px; /* Δίνει ομοιόμορφη απόσταση μεταξύ όλων των στοιχείων */
-
-    width: 100vw;  /* 100% του πλάτους της οθόνης */
+    width: 100%;  /* 100% του πλάτους της οθόνης */
     height: auto; 
     min-height: 100vh;
     /*Το 100vh σημαίνει "ακριβώς όσο το ύψος της οθόνης σου".
@@ -126,26 +112,71 @@ main {
     color: #ffffff;
 }
 
+/*HEADER & FOOTER*/
+header {
+    position: absolute;
+    color: #902d31;
+    font-size: 28px;
+    padding: 8px;
+    top: 5px;
+    left: 10px;
+}
+header:hover{
+    background-color: #FFA686;
+    border-radius: 20px;
+}
+footer {
+    position: relative;
+    display: block;
+    color: #902d31;
+    padding: 8px;
+    font-size: 28px;
+    margin-top: auto; /* Σπρώχνει το footer στο τέλος */
+    width:100px;
+    text-align: left;
+    /*bottom: 5px;  
+    left: 10px;*/
+}
+footer:hover {
+    background-color: #FFA686;
+    border-radius: 20px;
+}
+
+.intro h2 {
+    color: #0aafdd;
+    font-size: 24px;
+    margin-top: -8px;
+    margin-bottom: -2px;
+    width:100%;
+    text-align: left;
+}
+
+/*H*/
+h3{
+    color: #902d31;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: -2px;
+    width: 100%;
+}
+
+/*MAIN WITH LISTS*/
 main ul {
     list-style-type: none; /* Αφαιρεί τις κουκκίδες */
     padding: 0; /* Αφαιρεί το κενό που αφήνει ο browser αριστερά */
     margin: 0;
 }
+
 main li:before{
     content: "▹";
     margin-right: 8px; 
     display: inline-block; 
 }
 
-main li {
-    display: flex;
-    justify-content: flex-start; /* Τα σπρώχνει όλα τέρμα αριστερά */
-    margin-bottom: 2px;
-    padding: 0 ;
-}
-main li a {
-    margin: 0;
-    padding: 0;
+.about-me p {
+    color: #ffffff;
+    font-size: 14px;
+    text-align: justify; /* Στοίχιση "πλήρης" για να φαίνεται σαν μπλοκ κειμένου */
 }
 
 /*PHOTOS FOR EΠΙΚΟΙΝΩΝΙΑ*/
